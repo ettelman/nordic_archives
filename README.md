@@ -1,6 +1,6 @@
 # ![Nordic Archives logo](public/images/nordic_logo.png)
 
-# Nordic Archives Portal CTF
+# Nordic Archives CTF
 
 First appeared for IT-säkerhetstestare 2025
 
@@ -13,6 +13,8 @@ locally with minimal setup. Focus is on OSINT and web
 Clone repo
 
 ```bash
+git clone https://github.com/ettelman/nordic_archives.git
+cd nordic_archives
 docker compose up --build
 ```
 
