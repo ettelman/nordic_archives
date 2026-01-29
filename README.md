@@ -8,6 +8,8 @@ A CTF web challenge built around a fictional document archiving portal.
 Designed for beginner to intermediate web security training and can be run
 locally with minimal setup. Focus is on OSINT and web
 
+Objectives: Find 2 flags - vault flag and admin flag
+
 ## Quick start (Docker Compose)
 
 Clone repo
