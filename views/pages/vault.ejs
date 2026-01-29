@@ -1,0 +1,52 @@
+<%- include('../partials/header', { title: title }) %>
+<section class="page-hero vault-hero">
+  <div class="container">
+    <p class="eyebrow">Vault</p>
+    <h1>Nordic Archives secure vault</h1>
+    <p class="lead">Restricted operational intelligence and executive summaries.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container vault-grid">
+    <article class="vault-card">
+      <h3>Executive notes</h3>
+      <p>Board visibility pack for Q2 includes risk posture, audit readiness, and contract renewals.</p>
+      <p class="panel-meta">Updated 2025-02-01</p>
+    </article>
+    <article class="vault-card">
+      <h3>Client escalations</h3>
+      <p>FjordBank escalation resolved. Actioned remediation timeline and reviewed SLA commitments.</p>
+      <p class="panel-meta">Updated 2025-02-03</p>
+    </article>
+    <article class="vault-card">
+      <h3>Security brief</h3>
+      <p>Pending SOC evidence review and quarterly access recertification for privileged accounts.</p>
+      <p class="panel-meta">Updated 2025-02-05</p>
+    </article>
+    <article class="vault-card">
+      <h3>Retention ledger</h3>
+      <p>Archive ledger synced. 12 new holdings registered with compliance oversight.</p>
+      <p class="panel-meta">Updated 2025-02-06</p>
+    </article>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container split">
+    <div class="panel vault-panel">
+      <h2>Vault directives</h2>
+      <ul class="list">
+        <li>Keep access logs aligned with privileged account reviews</li>
+        <li>Store operational evidence in the compliance archive</li>
+        <li>Rotate vault keys after each audit cycle</li>
+      </ul>
+    </div>
+    <div class="panel vault-panel">
+      <h2>CTF flag</h2>
+      <p class="panel-meta">Authorized vault disclosure</p>
+      <p class="vault-flag"><%= flag %></p>
+    </div>
+  </div>
+</section>
+<%- include('../partials/footer') %>

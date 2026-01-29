@@ -1,0 +1,28 @@
+<%- include('../../partials/header', { title: title }) %>
+<section class="page-hero">
+  <div class="container">
+    <p class="eyebrow">Guest Portal</p>
+    <h1>Guest documents</h1>
+    <p class="lead">Reference documents available under limited guest access.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="panel">
+      <% if (!documents || documents.length === 0) { %>
+        <p>No guest documents are available at this time.</p>
+      <% } else { %>
+        <ul class="doc-list">
+          <% documents.forEach((doc) => { %>
+            <li>
+              <a class="doc-title" href="/portal/guest/documents/<%= doc.id %>"><%= doc.title %></a>
+              <span class="doc-summary"><%= doc.summary %></span>
+            </li>
+          <% }) %>
+        </ul>
+      <% } %>
+    </div>
+  </div>
+</section>
+<%- include('../../partials/footer') %>

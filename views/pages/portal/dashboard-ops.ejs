@@ -1,0 +1,58 @@
+<%- include('../../partials/header', { title: title }) %>
+<section class="page-hero">
+  <div class="container">
+    <p class="eyebrow">Operations Portal</p>
+    <h1>Welcome back, <%= user.fullName %></h1>
+    <p class="lead">Monitor service delivery queues, retention schedules, and client onboarding workflows.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container grid">
+    <article class="card">
+      <p class="card-meta">Assigned queue</p>
+      <h3><%= summary.total %> items</h3>
+      <p class="card-meta">Open <%= summary.open %> · In progress <%= summary.inProgress %> · Waiting <%= summary.waiting %></p>
+    </article>
+    <article class="card">
+      <p class="card-meta">Service readiness</p>
+      <h3>On track</h3>
+      <p class="card-meta">Next audit window opens in 12 days</p>
+    </article>
+    <article class="card">
+      <p class="card-meta">SLA coverage</p>
+      <h3>98.6%</h3>
+      <p class="card-meta">Last 30 days · 2 escalations</p>
+    </article>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container split">
+    <div class="panel">
+      <h2>Assigned messages</h2>
+      <% if (!messages || messages.length === 0) { %>
+        <p>No operational messages are assigned to you.</p>
+      <% } else { %>
+        <ul class="list">
+          <% messages.forEach((message) => { %>
+            <li>
+              <a class="text-link" href="/portal/ops/messages/<%= message.id %>"><%= message.subject %></a>
+              · <%= message.status %>
+            </li>
+          <% }) %>
+        </ul>
+      <% } %>
+      <a class="text-link" href="/portal/ops">Open operational view</a>
+    </div>
+    <div class="panel">
+      <h3>Operational focus</h3>
+      <ul class="list">
+        <li>Client retention schedule validation</li>
+        <li>Vault audit preparation</li>
+        <li>Weekly service status reporting</li>
+      </ul>
+    </div>
+  </div>
+</section>
+<%- include('../../partials/footer') %>

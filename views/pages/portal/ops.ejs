@@ -1,0 +1,44 @@
+<%- include('../../partials/header', { title: title }) %>
+<section class="page-hero">
+  <div class="container">
+    <p class="eyebrow">Operations</p>
+    <h1>Operational controls</h1>
+    <p class="lead">Track service delivery tasks, compliance reporting schedules, and recovery testing cadence.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container split">
+    <div class="panel">
+      <h2>Your queue</h2>
+      <p class="panel-meta">Open <%= summary.open %> · In progress <%= summary.inProgress %> · Waiting <%= summary.waiting %></p>
+      <% if (!messages || messages.length === 0) { %>
+        <p>No operational messages are assigned to you.</p>
+      <% } else { %>
+        <ul class="list">
+          <% messages.forEach((message) => { %>
+            <li>
+              <a class="text-link" href="/portal/ops/messages/<%= message.id %>"><%= message.subject %></a>
+              · <%= message.status %>
+            </li>
+          <% }) %>
+        </ul>
+      <% } %>
+    </div>
+    <div class="panel">
+      <h3>Active workstreams</h3>
+      <ul class="list">
+        <li>Retention schedule verification</li>
+        <li>Client onboarding handover reviews</li>
+        <li>Vault access reconciliation</li>
+      </ul>
+      <h3>Upcoming milestones</h3>
+      <ul class="list">
+        <li>Quarterly service review cycle</li>
+        <li>Disaster recovery validation</li>
+        <li>Compliance reporting refresh</li>
+      </ul>
+    </div>
+  </div>
+</section>
+<%- include('../../partials/footer') %>

@@ -1,0 +1,24 @@
+<%- include('../../partials/header', { title: title }) %>
+<section class="page-hero">
+  <div class="container">
+    <p class="eyebrow">Admin</p>
+    <h1>Contact message</h1>
+    <p class="lead">Received <%= message.created_at %></p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="panel">
+      <h2>Message details</h2>
+      <p><strong>From:</strong> <%= message.full_name %> (<%= message.email %>)</p>
+      <% if (message.company) { %>
+        <p><strong>Company:</strong> <%= message.company %></p>
+      <% } %>
+      <div class="message-body">
+        <%- message.message %>
+      </div>
+    </div>
+  </div>
+</section>
+<%- include('../../partials/footer') %>

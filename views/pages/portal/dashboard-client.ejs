@@ -1,0 +1,35 @@
+<%- include('../../partials/header', { title: title }) %>
+<section class="page-hero">
+  <div class="container">
+    <p class="eyebrow">Client Portal</p>
+    <h1>Welcome back, <%= user.fullName %></h1>
+    <p class="lead">Review retention activity, document inventory status, and current service notices.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container split">
+    <div class="panel">
+      <h2>Document activity</h2>
+      <% if (documents.length === 0) { %>
+        <p>No documents are currently listed for your account.</p>
+      <% } else { %>
+        <ul class="list">
+          <% documents.forEach((doc) => { %>
+            <li><%= doc.name %> · Added <%= doc.created_at %></li>
+          <% }) %>
+        </ul>
+      <% } %>
+      <a class="text-link" href="/portal/client">View full library</a>
+    </div>
+    <div class="panel">
+      <h3>Service overview</h3>
+      <ul class="list">
+        <li>Retention schedule monitoring</li>
+        <li>Quarterly compliance reporting</li>
+        <li>Secure retrieval request tracking</li>
+      </ul>
+    </div>
+  </div>
+</section>
+<%- include('../../partials/footer') %>

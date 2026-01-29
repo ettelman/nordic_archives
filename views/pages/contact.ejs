@@ -1,0 +1,53 @@
+<%- include('../partials/header', { title: title }) %>
+<section class="page-hero">
+  <div class="container">
+    <p class="eyebrow">Contact</p>
+    <h1>Request a consultation</h1>
+    <p class="lead">Reach out to discuss retention requirements, service options, or client onboarding.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container split">
+    <div class="stack">
+      <div>
+        <h2>Contact details</h2>
+        <p>Our consultants respond to inquiries within one business day.</p>
+        <div class="contact-details">
+          <p><strong>Phone:</strong> +46 8 451 22 40</p>
+          <p><strong>Email:</strong> contact@nordicarchives.se</p>
+          <p><strong>Address:</strong> Vasagatan 18, 111 20 Stockholm</p>
+        </div>
+      </div>
+      <div class="image-slot image-slot-small image-frame">
+        <img src="/images/contact.png" alt="Nordic Archives contact desk">
+      </div>
+    </div>
+    <div class="panel">
+      <h3>Send a message</h3>
+      <% if (notice) { %>
+        <p class="notice"><%= notice %></p>
+      <% } %>
+      <form method="post" action="/contact" class="form">
+        <label>
+          Full name
+          <input type="text" name="fullName" value="<%= form.fullName %>" required>
+        </label>
+        <label>
+          Work email
+          <input type="email" name="email" value="<%= form.email %>" required>
+        </label>
+        <label>
+          Company
+          <input type="text" name="company" value="<%= form.company %>">
+        </label>
+        <label>
+          Message
+          <textarea name="message" rows="4" required><%= form.message %></textarea>
+        </label>
+        <button class="button" type="submit">Submit request</button>
+      </form>
+    </div>
+  </div>
+</section>
+<%- include('../partials/footer') %>

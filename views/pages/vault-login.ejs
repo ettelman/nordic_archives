@@ -1,0 +1,43 @@
+<%- include('../partials/header', { title: title }) %>
+<section class="page-hero vault-hero">
+  <div class="container">
+    <p class="eyebrow">Vault Access</p>
+    <h1>Company vault login</h1>
+    <p class="lead">Authorized personnel only. Access is monitored and logged.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container split">
+    <div class="panel vault-panel">
+      <h2>Enter vault credentials</h2>
+      <% if (error) { %>
+        <p class="notice notice-error"><%= error %></p>
+      <% } %>
+      <form method="post" action="/vault" class="form">
+        <label>
+          Username
+          <input type="text" name="username" value="<%= form.username %>" required>
+        </label>
+        <label>
+          Password
+          <input type="password" name="password" required>
+        </label>
+        <label>
+          Vault key
+          <input type="text" name="vaultkey" value="<%= form.vaultkey %>" required>
+        </label>
+        <button class="button" type="submit">Unlock vault</button>
+      </form>
+    </div>
+    <div class="panel vault-panel">
+      <h3>Access notice</h3>
+      <ul class="list">
+        <li>Use only assigned credentials</li>
+        <li>Report access anomalies immediately</li>
+        <li>Do not store vault keys in tickets</li>
+      </ul>
+    </div>
+  </div>
+</section>
+<%- include('../partials/footer') %>

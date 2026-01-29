@@ -1,0 +1,36 @@
+<%- include('../../partials/header', { title: title }) %>
+<section class="page-hero">
+  <div class="container">
+    <p class="eyebrow">Client Portal</p>
+    <h1>Limited access dashboard</h1>
+    <p class="lead">Your account is authenticated with guest access. Document access and operational tools are restricted.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container split">
+    <div class="panel">
+      <h2>Guest documents</h2>
+      <p class="panel-meta">Signed in as <%= user.fullName ? user.fullName : user.email %></p>
+      <% if (!documents || documents.length === 0) { %>
+        <p>No guest documents are available at this time.</p>
+      <% } else { %>
+        <ul class="doc-list">
+          <% documents.forEach((doc) => { %>
+            <li>
+              <a class="doc-title" href="/portal/guest/documents/<%= doc.id %>"><%= doc.title %></a>
+              <span class="doc-summary"><%= doc.summary %></span>
+            </li>
+          <% }) %>
+        </ul>
+        <a class="text-link" href="/portal/guest/documents">View all guest documents</a>
+      <% } %>
+    </div>
+    <div class="panel">
+      <h3>Need expanded access?</h3>
+      <p>Guest access is intended for limited visibility. Contact your account manager to request full client access.</p>
+      <a class="button" href="/contact">Contact client services</a>
+    </div>
+  </div>
+</section>
+<%- include('../../partials/footer') %>

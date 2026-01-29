@@ -1,0 +1,29 @@
+<%- include('../../partials/header', { title: title }) %>
+<section class="page-hero">
+  <div class="container">
+    <p class="eyebrow">Guest Document</p>
+    <h1><%= document.title %></h1>
+    <p class="lead"><%= document.summary %></p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="panel">
+      <p class="doc-meta">Published <%= document.created_at %></p>
+      <div class="doc-body">
+        <% if (document.format === 'thread') { %>
+          <div class="doc-thread"><%= document.body %></div>
+        <% } else { %>
+          <% document.body.split('\n').forEach((line) => { %>
+            <% if (line.trim().length > 0) { %>
+              <p><%= line %></p>
+            <% } %>
+          <% }) %>
+        <% } %>
+      </div>
+      <a class="text-link" href="/portal">Return to dashboard</a>
+    </div>
+  </div>
+</section>
+<%- include('../../partials/footer') %>

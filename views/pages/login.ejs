@@ -1,0 +1,48 @@
+<%- include('../partials/header', { title: title }) %>
+<section class="page-hero">
+  <div class="container">
+    <p class="eyebrow">Portal</p>
+    <h1>Secure access for clients and employees</h1>
+    <p class="lead">Sign in to review retention activity, request document retrieval, and manage authorized users.</p>
+  </div>
+</section>
+
+<section class="section section-muted">
+  <div class="container login-layout">
+    <div class="panel login-panel">
+      <h2>Login</h2>
+      <p class="panel-lead">Access is provided to authorized contacts within active service agreements.</p>
+      <% if (error) { %>
+        <p class="notice notice-error"><%= error %></p>
+      <% } %>
+      <form method="post" action="/login" class="form">
+        <label>
+          Work email
+          <input type="email" name="email" required>
+        </label>
+        <label>
+          Password
+          <input type="password" name="password" required>
+        </label>
+        <button class="button" type="submit">Sign in</button>
+      </form>
+      <div class="login-support">
+        <p class="form-help">Need access? Contact your account manager or email support.</p>
+      </div>
+    </div>
+    <div class="stack">
+      <div class="image-slot image-slot-tall image-frame">
+        <img src="/images/portal.png" alt="Secure client portal access">
+      </div>
+      <div class="panel panel-compact">
+        <h3>Portal overview</h3>
+        <ul class="list">
+          <li>Role-based access and approvals</li>
+          <li>Retention and retrieval tracking</li>
+          <li>Quarterly reporting packages</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<%- include('../partials/footer') %>

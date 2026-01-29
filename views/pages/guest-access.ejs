@@ -1,0 +1,29 @@
+<%- include('../partials/header', { title: title }) %>
+<section class="page-hero">
+  <div class="container">
+    <p class="eyebrow">Guest Access</p>
+    <h1>Guest portal access rules</h1>
+    <p class="lead">Guest access is limited to approved reference materials and read-only summaries.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container split">
+    <div class="panel">
+      <h2>Usage guidelines</h2>
+      <ul class="list">
+        <li>Read-only access to guest documents</li>
+        <li>No uploads, retrieval requests, or account changes</li>
+        <li>Do not share guest credentials externally</li>
+        <li>Contact client services for access upgrades</li>
+      </ul>
+    </div>
+    <div class="panel">
+      <h2>Guest credentials</h2>
+      <p class="panel-meta">Use the portal login to access the guest dashboard.</p>
+      <p><strong>Email:</strong> <%= credentials.email %></p>
+      <p><strong>Password:</strong> <%= credentials.password %></p>
+    </div>
+  </div>
+</section>
+<%- include('../partials/footer') %>

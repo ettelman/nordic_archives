@@ -1,0 +1,31 @@
+<%- include('../../partials/header', { title: title }) %>
+<section class="page-hero">
+  <div class="container">
+    <p class="eyebrow">Client Documents</p>
+    <h1>Document library</h1>
+    <p class="lead">View documents associated with your retention agreement and track recent updates.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container split">
+    <div class="panel">
+      <h2>Documents</h2>
+      <% if (documents.length === 0) { %>
+        <p>No documents are currently listed for your account.</p>
+      <% } else { %>
+        <ul class="list">
+          <% documents.forEach((doc) => { %>
+            <li><strong><%= doc.name %></strong> · Added <%= doc.created_at %></li>
+          <% }) %>
+        </ul>
+      <% } %>
+    </div>
+    <div class="panel">
+      <h3>Document requests</h3>
+      <p>For retrieval or updates, submit a request through your service manager or contact client services.</p>
+      <a class="button" href="/contact">Request support</a>
+    </div>
+  </div>
+</section>
+<%- include('../../partials/footer') %>

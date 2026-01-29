@@ -1,0 +1,41 @@
+<%- include('../../partials/header', { title: title }) %>
+<section class="page-hero">
+  <div class="container">
+    <p class="eyebrow">Admin</p>
+    <h1>Admin dashboard</h1>
+    <p class="lead">Review recent contact logs and service activity.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container split">
+    <div class="panel">
+      <h2>Contact log viewer</h2>
+      <% if (!logs || logs.length === 0) { %>
+        <p>No contact messages logged yet.</p>
+      <% } else { %>
+        <ul class="list">
+          <% logs.forEach((entry) => { %>
+            <li>
+              <strong><%= entry.fullName || 'Unknown' %></strong>
+              · <%= entry.email || 'n/a' %>
+              · <%= entry.loggedAt || 'n/a' %>
+              <% if (entry.company) { %>
+                · <%= entry.company %>
+              <% } %>
+              <% if (entry.message) { %>
+                · <%= String(entry.message).slice(0, 120) %>
+              <% } %>
+            </li>
+          <% }) %>
+        </ul>
+      <% } %>
+    </div>
+    <div class="panel">
+      <h2>CTF flag</h2>
+      <p class="panel-meta">Authorized admin notice</p>
+      <p><strong><%= flag %></strong></p>
+    </div>
+  </div>
+</section>
+<%- include('../../partials/footer') %>

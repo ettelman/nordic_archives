@@ -1,0 +1,28 @@
+<%- include('../../partials/header', { title: title }) %>
+<section class="page-hero">
+  <div class="container">
+    <p class="eyebrow">Operations</p>
+    <h1><%= message.subject %></h1>
+    <p class="lead">Status: <%= message.status %> · Logged <%= message.created_at %></p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container split">
+    <div class="panel">
+      <h2>Message details</h2>
+      <p><%= message.body %></p>
+      <p class="panel-meta">Reference ID: OPS-<%= message.id %></p>
+    </div>
+    <div class="panel">
+      <h3>Operational checklist</h3>
+      <ul class="list">
+        <li>Confirm ownership and due date</li>
+        <li>Log updates in the client record</li>
+        <li>Notify service manager if escalation is needed</li>
+      </ul>
+      <a class="text-link" href="/portal/ops">Back to operations</a>
+    </div>
+  </div>
+</section>
+<%- include('../../partials/footer') %>
