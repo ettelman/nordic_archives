@@ -562,6 +562,12 @@ p {
   color: var(--ink-900);
 }
 
+.footer-attribution {
+  margin-top: 8px;
+  font-size: 12px;
+  color: var(--ink-500);
+}
+
 @media (max-width: 820px) {
   .header-content {
     flex-direction: column;

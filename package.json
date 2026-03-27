@@ -1,8 +1,10 @@
 {
   "name": "nordic-archive-portal",
   "version": "1.0.0",
-  "description": "Corporate web application for Nordic Archives",
+  "description": "Intentionally vulnerable Nordic Archives CTF web challenge",
   "main": "app.js",
+  "author": "ettelman",
+  "license": "MIT",
   "scripts": {
     "start": "node app.js",
     "init-db": "node scripts/init_db.js",

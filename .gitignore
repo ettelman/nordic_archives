@@ -1,1 +1,5 @@
 /.env
+/node_modules/
+/data/*.db
+!/data/.gitkeep
+/npm-debug.log*

@@ -31,7 +31,8 @@ HOST_PORT=4000 docker compose up --build
 ## Intended use
 
 This project is for educational and training purposes only. Run it in a local,
-controlled environment. Do not deploy, or do so at your own risk.
+controlled environment. The application is intentionally insecure by design.
+Do not deploy, or do so at your own risk.
 
 ## Local development
 
@@ -39,3 +40,19 @@ controlled environment. Do not deploy, or do so at your own risk.
 npm install
 npm start
 ```
+
+Also requires chromium to be installed in any of the usual linux paths for bins
+
+The SQLite databases under `data/` are generated locally at runtime and are not
+meant to be committed to version control.
+
+## Environment
+
+Copy `.env.example` to `.env` if you want to override defaults such as admin
+credentials, session secret or flags
+
+## License
+
+This project is open source under the MIT License. You are free to use, modify,
+and redistribute it as long as the copyright and attribution notice for
+`ettelman` is kept intact. See [LICENSE](LICENSE).

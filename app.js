@@ -1,3 +1,4 @@
+const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
 require('dotenv').config();
@@ -12,6 +13,7 @@ const adminRoutes = require('./routes/admin');
 const vaultRoutes = require('./routes/vault');
 
 const app = express();
+const dataDir = path.join(__dirname, 'data');
 
 app.disable('x-powered-by');
 app.set('view engine', 'ejs');
@@ -25,11 +27,13 @@ app.get('/favicon.ico', (req, res) => {
 
 const sessionSecret = process.env.SESSION_SECRET || crypto.randomBytes(32).toString('hex');
 
+fs.mkdirSync(dataDir, { recursive: true });
+
 app.use(
   session({
     store: new SQLiteStore({
       db: 'sessions.db',
-      dir: path.join(__dirname, 'data')
+      dir: dataDir
     }),
     secret: sessionSecret,
     resave: false,
@@ -46,6 +50,9 @@ app.use((req, res, next) => {
   res.locals.currentYear = new Date().getFullYear();
   res.locals.company = {
     name: 'Nordic Archives'
+  };
+  res.locals.project = {
+    author: 'ettelman'
   };
   res.locals.user = req.session.user || null;
   next();
