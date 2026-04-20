@@ -10,6 +10,8 @@ locally with minimal setup. Focus is on OSINT/recon and web
 
 Objectives: Find 2 flags - vault flag and admin flag
 
+Do not look at the code before trying the challenge, will spoil the flags
+
 ## Quick start (Docker Compose)
 
 Clone repo
