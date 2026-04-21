@@ -4,9 +4,13 @@
 
 First appeared for IT-säkerhetstestare 2025 @ course "Hacking och sårbarhetsanalys"
 
+Writeup: <http://ettelman.github.io/blog/nordic>
+
 A CTF web challenge built around a fictional document archiving portal.
 Designed for beginner to intermediate web security training and can be run
 locally with minimal setup. Focus is on OSINT/recon and web vulns
+
+Mostly vibecoded. If you dont like that skip this CTF
 
 Objectives: Find 2 flags - vault flag and admin flag
 
@@ -23,6 +27,7 @@ docker compose up --build
 ```
 
 Open `http://localhost:3000` in your browser.
+(HINT: Remeber to use docker network for exploits)
 
 To use a different host port:
 
