@@ -3,3 +3,4 @@
 /data/*.db
 !/data/.gitkeep
 /npm-debug.log*
+!package-lock.json
